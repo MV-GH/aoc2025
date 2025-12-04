@@ -1,8 +1,9 @@
 package aoc.day3
 
+import aoc.util.basicCleaning
 import aoc.util.getResourceAsText
 
-var inputTxt = getResourceAsText("/day3/input.txt")!!
+val inputTxt = getResourceAsText("/day3/input.txt")!!
 
 
 fun main() {
@@ -78,11 +79,7 @@ fun findLargestDigit(bank: String): Info {
 }
 
 
-fun inputToInputList(): List<String> {
-    return inputTxt.split("\n")
-        .map(String::trim)
-        .filter { it.isNotEmpty() }
-}
+fun inputToInputList(): List<String> = inputTxt.basicCleaning()
 
 
 data class Info(val largestDigit: Int, val alone: Boolean, val pos: Int)
